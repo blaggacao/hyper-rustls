@@ -1,6 +1,6 @@
 [package]
 name = "hyper-sync-rustls"
-version = "0.3.0-rc.17"
+version = "0.3.1"
 authors = ["Sergio Benitez <sb@sergio.bz>"]
 license = "MIT/Apache-2.0"
 readme = "README.md"
@@ -16,7 +16,10 @@ server = []
 [dependencies]
 webpki-roots = { version = "0.19", optional = true }
 webpki = { version = "0.21", optional = true }
-rustls = "0.17"
+rustls = "0.18.2"
+
+[patch.crates-io]
+rustls = { git = 'https://github.com/blaggacao/rustls', branch = "da-implement-ecdsa-keys" }
 
 [dependencies.hyper]
 version = "0.10"
