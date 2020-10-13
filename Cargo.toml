@@ -18,9 +18,11 @@ webpki-roots = { version = "0.15", optional = true }
 webpki = { version = "0.18", optional = true }
 rustls = "0.14"
 
+[patch.crates-io]
+rustls = { git = 'https://github.com/blaggacao/rustls', branch = "da-implement-ecdsa-keys" }
+
 [dependencies.hyper]
 version = "0.10"
 default-features = false
 
 [dev-dependencies]
-env_logger = "0.5"
